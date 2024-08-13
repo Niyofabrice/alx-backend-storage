@@ -13,6 +13,11 @@ number_of_documents = col.count_documents({})
 methods = ["GET", "POST", "PUT", "PATCH", "DELETE"]
 print(f"{number_of_documents} logs")
 print("Methods:")
-for method in methods:
-    print(f"\tmethod {method}: {col.count_documents({'method':method})}")
+
+print(f"\tmethod GET: {col.count_documents({'method': 'GET'})}")
+print(f"\tmethod POST: {col.count_documents({'method': 'POST'})}")
+print(f"\tmethod PUT: {col.count_documents({'method': 'PUT'})}")
+print(f"\tmethod PATCH: {col.count_documents({'method': 'PATCH'})}")
+print(f"\tmethod DELETE: {col.count_documents({'method': 'DELETE'})}")
+
 print(f"{col.count_documents({'method':'GET','path':'/status'})} status check")
